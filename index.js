@@ -24,7 +24,7 @@ const infinity = 999;
 array = makeArray(7, 7);
 result_array = makeArray(7, 5);
 
-const iteration = result_array[0].length;
+const iterationsCount = result_array[0].length + 1;
 
 array[0][0] = 0;
 array[0][1] = 8;
@@ -82,18 +82,15 @@ array[6][4] = Infinity;
 array[6][5] = 5;
 array[6][6] = 0;
 
-for (let j = 0; j < array.length; j++) {
-  result_array[j][0] = array[j][array.length - 1];
-}
-
-for (let k = 0; k < iteration; k++) {
+for (let k = 1; k < iterationsCount; k++) {
   for (let j = 0; j < array.length; j++) {
     var min = infinity;
-    for (let i = 0; i < array.length; i++) {
-      var sum = array[i][j] + result_array[i][k];
+    for (let i = 0; i < array[j].length; i++) {
+      result_array[i][0] = array[i][array.length - 1];
+      var sum = array[i][j] + result_array[i][k - 1];
       if (sum < min) min = sum;
     }
-    result_array[j][k + 1] = min;
+    result_array[j][k] = min;
   }
 }
 

@@ -1,55 +1,42 @@
-// import { makeArray } from './makeArray.js';
-// import { fillArray } from './fillArray';
-// import { shortestPathTable } from './shortestPathTable';
-const readline = require('readline-sync');
-
-const makeArray = (height, width) => {
-  let outputArray = new Array(height);
-  let row = new Array(width);
-  for (let iy = 0; iy < height; iy++) {
-    outputArray[iy] = row.slice();
-  }
-  return outputArray;
-};
-
-const fillArray = (array) => {
-  console.log('Введи путь: ');
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array[i].length; j++) {
-      if (i == j) {
-        array[i][j] = 0;
-        continue;
-      } else if (typeof array[j][i] !== 'undefined') {
-        array[i][j] = array[j][i];
-        console.log(array[j][i]);
-        continue;
+const readline = require('readline-sync'),
+  makeArray = (r, e) => {
+    let a = Array(r),
+      n = Array(e);
+    for (let e = 0; r > e; e++) a[e] = n.slice();
+    return a;
+  },
+  fillArray = (r) => {
+    console.log('Введи путь: ');
+    for (let e = 0; e < r.length; e++)
+      for (let a = 0; a < r[e].length; a++) {
+        if (e == a) {
+          r[e][a] = 0;
+          continue;
+        }
+        if (void 0 !== r[a][e]) {
+          (r[e][a] = r[a][e]), console.log(r[a][e]);
+          continue;
+        }
+        const n = readline.question(`${e + 1} -> ${a + 1} `);
+        r[e][a] = +n;
       }
-      const numberForArray = readline.question(`${i + 1} -> ${j + 1} `);
-
-      array[i][j] = Number(numberForArray);
-    }
-  }
-};
-
-const shortestPathTable = (array, result_array) => {
-  for (let k = 0; k < result_array[k].length; k++) {
-    for (let j = 0; j < array.length; j++) {
-      var min = 999;
-      for (let i = 0; i < array[j].length; i++) {
-        result_array[i][0] = array[i][array.length - 1];
-        var sum = array[i][j] + result_array[i][k - 1];
-        if (sum < min) min = sum;
+  },
+  shortestPathTable = (r, e) => {
+    for (let t = 0; t < e[t].length; t++)
+      for (let i = 0; i < r.length; i++) {
+        var a = 999;
+        for (let l = 0; l < r[i].length; l++) {
+          e[l][0] = r[l][r.length - 1];
+          var n = r[l][i] + e[l][t - 1];
+          a > n && (a = n);
+        }
+        e[i][t] = a;
       }
-      result_array[j][k] = min;
-    }
-  }
-};
-
-const integerSize = Number(readline.question('Количество точек? '));
-array = makeArray(integerSize, integerSize);
-result_array = makeArray(integerSize, integerSize - 1);
-fillArray(array);
-shortestPathTable(array, result_array);
-
-console.table(array);
-console.table(result_array);
+  },
+  integerSize = +readline.question('Количество точек? ');
+(array = makeArray(integerSize, integerSize)),
+  (result_array = makeArray(integerSize, integerSize - 1)),
+  fillArray(array),
+  shortestPathTable(array, result_array),
+  console.table(array),
+  console.table(result_array);

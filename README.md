@@ -1,6 +1,5 @@
-### Install 
-npm install readline-sync -S
+### Install -> npm install readline-sync -S
 
-# to Start -> node index.js
+# Start -> node index.js
 
 ## ∞ - Infinity

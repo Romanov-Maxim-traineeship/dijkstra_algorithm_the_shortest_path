@@ -1,5 +1,6 @@
-### Install -> npm install readline-sync -S
+### Работа из консоли. 
+Для начала нужно установить пакет "readline-sync" через npm или yarn 
 
-# Start -> node index.js
+# Чтобы начать введите -> node index.js в папке с файлом
 
 ## ∞ - Infinity

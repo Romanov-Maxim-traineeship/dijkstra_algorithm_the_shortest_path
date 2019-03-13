@@ -11,4 +11,4 @@ yarn add readline-sync
 node index.js 
 ```
 
-## `∞ - Infinity`
+### `∞ - Infinity`

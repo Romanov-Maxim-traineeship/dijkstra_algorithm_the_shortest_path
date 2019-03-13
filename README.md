@@ -1,4 +1,4 @@
-### Работа из консоли. 
+### Работа из терминала. 
 Для начала нужно установить пакет "readline-sync" через npm или yarn 
 ```bash
 npm install readline-sync -S

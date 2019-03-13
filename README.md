@@ -6,7 +6,7 @@ npm install readline-sync -S
 yarn add readline-sync
 ```
 
-# Чтобы начать введите в папке с файлом 
+### Чтобы начать введите в папке с файлом 
 ```bash
 node index.js 
 ```

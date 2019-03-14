@@ -1,4 +1,8 @@
-### Работа из терминала. 
+###  ```diff
++ Работа из терминала. in green
+- Работа из терминала. in red
+```
+
 Для начала нужно установить пакет "readline-sync" через npm или yarn 
 ```bash
 npm install readline-sync -S

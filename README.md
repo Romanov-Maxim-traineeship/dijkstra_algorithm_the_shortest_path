@@ -1,8 +1,3 @@
-### Чтобы начать введите в папке с файлом 
-```bash
-node index.js 
-```
-
 ###  Работа из терминала
 
 Для начала нужно установить пакет "readline-sync" через npm или yarn 
@@ -12,6 +7,9 @@ npm install readline-sync -S
 yarn add readline-sync
 ```
 
-
+### Чтобы начать введите в папке с файлом 
+```bash
+node index.js 
+```
 
 ### `∞ - Infinity`
